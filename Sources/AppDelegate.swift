@@ -416,8 +416,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
         sizeItem.submenu = sizes
         menu.addItem(sizeItem)
 
-        let transparency = item("Preview Transparency")
-        let transparencyMenu = NSMenu(title: "Preview Transparency")
+        let transparency = item("Transparency")
+        let transparencyMenu = NSMenu(title: "Transparency")
         transparencyMenu.autoenablesItems = false
         let control = NSMenuItem()
         control.view = CameraTransparencyControl(transparency: cameraTransparency) { [weak self] value in
@@ -654,7 +654,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
         let alert = NSAlert()
         alert.messageText = "Your camera, without the window."
         alert.informativeText = "Drag the camera to move it. Scroll to resize. Right-click the camera or recording panel for controls.\n\nYour recording area is remembered across restarts. Choose Select Area and drag a rectangle to prepare a region. The surrounding screen stays dimmed; your selected area stays clear. Drag the white corner dots to fine-tune the area before recording. Choose Whole Screen to remove the dimming.\n\nStart Recording when ready. Movies are saved automatically to your Desktop. Control–Option–Command–R starts/stops; Control–Option–Command–P pauses/resumes.\n\nAudio Input selects the microphone and offers an input-level slider and live meter.\n\nShow Recording Panel displays optional controls. The controls and dimming stay out of your recordings. Hide Camera lets you record just the screen."
-        alert.informativeText += "\n\nPreview Transparency optionally lets you see through the camera while you work. Adjust it from the camera menu; Reset Transparency to 0% turns it off. Check Apply Transparency to Saved Video to use the same transparency in your recordings, or leave it unchecked to keep the recorded camera opaque. Both choices are remembered."
+        alert.informativeText += "\n\nTransparency optionally lets you see through the camera while you work. Adjust it from the camera menu; Reset Transparency to 0% turns it off. Check Apply Transparency to Saved Video to use the same transparency in your recordings, or leave it unchecked to keep the recorded camera opaque. Both choices are remembered."
         alert.addButton(withTitle: "Got It")
         alert.runModal()
     }

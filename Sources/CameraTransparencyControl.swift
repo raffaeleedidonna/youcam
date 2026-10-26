@@ -19,7 +19,7 @@ final class CameraTransparencyControl: NSView {
         self.onChange = onChange
         slider = NSSlider(value: transparency * 100, minValue: 0, maxValue: 80, target: nil, action: nil)
         super.init(frame: NSRect(x: 0, y: 0, width: 300, height: 64))
-        let caption = NSTextField(labelWithString: "Preview transparency")
+        let caption = NSTextField(labelWithString: "Transparency")
         caption.font = .systemFont(ofSize: 12, weight: .medium)
         caption.frame = NSRect(x: 14, y: 39, width: 205, height: 16)
         value.font = .monospacedDigitSystemFont(ofSize: 11, weight: .regular)
@@ -29,8 +29,8 @@ final class CameraTransparencyControl: NSView {
         slider.isContinuous = true
         slider.target = self
         slider.action = #selector(changeTransparency)
-        slider.setAccessibilityLabel("Camera preview transparency in percent")
-        slider.setAccessibilityHelp("Adjusts camera preview transparency.")
+        slider.setAccessibilityLabel("Camera transparency in percent")
+        slider.setAccessibilityHelp("Adjusts camera transparency.")
         for child in [caption, value, slider] { addSubview(child) }
         updateValue()
     }

@@ -10,7 +10,7 @@ func runCameraTransparencyTests(_ delegate: AppDelegate, defaults: UserDefaults)
     }
     expect(delegate.panel.alphaValue == 1 && delegate.cameraTransparency == 0,
            "Preview transparency is optional and off by default")
-    let menu = delegate.makeMenu().item(withTitle: "Preview Transparency")!.submenu!
+    let menu = delegate.makeMenu().item(withTitle: "Transparency")!.submenu!
     let control = menu.items.compactMap { $0.view as? CameraTransparencyControl }.first!
     control.slider.doubleValue = 55
     expect(NSApp.sendAction(control.slider.action!, to: control.slider.target, from: control.slider),

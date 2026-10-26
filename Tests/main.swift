@@ -272,7 +272,7 @@ func runTests() async {
     // A second launch should restore preferences using the saved frame.
     let savedFrame = delegate.panel.frame
     delegate.setCameraTransparency(0.45)
-    let saveTransparency = delegate.makeMenu().item(withTitle: "Preview Transparency")!.submenu!
+    let saveTransparency = delegate.makeMenu().item(withTitle: "Transparency")!.submenu!
         .item(withTitle: "Apply Transparency to Saved Video")!.view as! PersistentMenuToggle
     saveTransparency.performClick(nil)
     let restored = AppDelegate(previewMode: true, defaults: defaults)
@@ -284,7 +284,7 @@ func runTests() async {
            "Preview transparency is restored on the next launch")
     expect(restored.saveCameraTransparency && abs(restored.recordingCameraOpacity - 0.55) < 0.001,
            "The option to record transparency is restored on the next launch")
-    expect((restored.makeMenu().item(withTitle: "Preview Transparency")!.submenu!
+    expect((restored.makeMenu().item(withTitle: "Transparency")!.submenu!
         .item(withTitle: "Apply Transparency to Saved Video")!.view as! PersistentMenuToggle).state == .on,
            "The saved-video checkmark matches the restored preference")
     restored.applicationWillTerminate(Notification(name: NSApplication.willTerminateNotification))
